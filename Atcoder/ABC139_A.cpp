@@ -1,24 +1,38 @@
 #include <bits/stdc++.h>
-#define ll long long
-#define pb push_back
+#include <ext/pb_ds/assoc_container.hpp>
 #define f first
 #define s second
+#define all(vec) begin(vec), end(vec)
+#define pf push_front
+#define pb push_back
+#define lb lower_bound
+#define ub upper_bound
+#define mk make_pair
 using namespace std;
-double delta(ll x){
-	ll c = x, s = 0;
-	while( c> 0){
-	 	s += c%10; c/= 10;
-	}
-	return (double)1.0*x/s;
+using namespace __gnu_pbds;
+typedef long long ll;
+typedef pair<int,int> pii;
+typedef pair<ll,ll> pll;
+typedef pair<ll,int> pli;
+ 
+ 
+void solve(){
+    string s, t;
+    cin >> s >> t;
+    int c = 0;
+    if(s[0] == t[0])c++;
+    if(s[1] == t[1])c++;
+    if(s[2] == t[2])c++;
+    cout << c << '\n';
 }
+ 
 int main(){
-	int ub = 100, cnt = 0;
-	cin >> ub;
-	ll a = 0, b=1;
-	for(int i = 0; i< ub; i++){
-		if((a/b)%10 == 9 && delta(a+b) > delta(a+10*b))b*=10;
-		a += b;
-		cout <<a  << endl;
-  	}
-	return 0;
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+//    freopen("input.in", "r", stdin);
+//    freopen("output.out", "w", stdout);
+    int tc = 1;
+//    cin >> tc;
+    while(tc--){
+        solve();
+    }
 }
